@@ -8,15 +8,15 @@ namespace WindowsFormsGyumolcs {
     internal class Gyumolcs {
         int id;
         string nev;
-        string egysegar;
-        string mennyiseg;
+        double egysegar;
+        double mennyiseg;
 
         public int Id { get => id; set => id = value; }
         public string Nev { get => nev; set => nev = value; }
-        public string Egysegar { get => egysegar; set => egysegar = value; }
-        public string Mennyiseg { get => mennyiseg; set => mennyiseg = value; }
+        public double Egysegar { get => egysegar; set => egysegar = value; }
+        public double Mennyiseg { get => mennyiseg; set => mennyiseg = value; }
 
-        public Gyumolcs(int id, string rendszam, string ev, string szin)
+        public Gyumolcs(int id, string nev, double egysegar, double mennyiseg)
         {
             Id = id;
             Nev = nev;

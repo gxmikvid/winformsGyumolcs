@@ -28,19 +28,21 @@
         {
             this.gyumolcsList = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.egysegarCont = new System.Windows.Forms.TextBox();
             this.Delete = new System.Windows.Forms.Button();
             this.Modify = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.idCont = new System.Windows.Forms.NumericUpDown();
-            this.mennyisegCont = new System.Windows.Forms.TextBox();
             this.nameCont = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.egysegarCont = new System.Windows.Forms.NumericUpDown();
+            this.mennyisegCont = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.idCont)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.egysegarCont)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mennyisegCont)).BeginInit();
             this.SuspendLayout();
             // 
             // gyumolcsList
@@ -55,16 +57,16 @@
             this.gyumolcsList.Name = "gyumolcsList";
             this.gyumolcsList.Size = new System.Drawing.Size(326, 291);
             this.gyumolcsList.TabIndex = 0;
-            this.gyumolcsList.SelectedIndexChanged += new System.EventHandler(this.allAutok_SelectedIndexChanged);
+            this.gyumolcsList.SelectedIndexChanged += new System.EventHandler(this.gyumolcsList_SelectedIndexChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.mennyisegCont);
             this.groupBox1.Controls.Add(this.egysegarCont);
             this.groupBox1.Controls.Add(this.Delete);
             this.groupBox1.Controls.Add(this.Modify);
             this.groupBox1.Controls.Add(this.Add);
             this.groupBox1.Controls.Add(this.idCont);
-            this.groupBox1.Controls.Add(this.mennyisegCont);
             this.groupBox1.Controls.Add(this.nameCont);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -78,13 +80,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gyümölcs";
-            // 
-            // egysegarCont
-            // 
-            this.egysegarCont.Location = new System.Drawing.Point(115, 92);
-            this.egysegarCont.Name = "egysegarCont";
-            this.egysegarCont.Size = new System.Drawing.Size(100, 20);
-            this.egysegarCont.TabIndex = 12;
             // 
             // Delete
             // 
@@ -124,6 +119,7 @@
             // 
             // idCont
             // 
+            this.idCont.Enabled = false;
             this.idCont.Location = new System.Drawing.Point(115, 16);
             this.idCont.Maximum = new decimal(new int[] {
             100000,
@@ -133,13 +129,6 @@
             this.idCont.Name = "idCont";
             this.idCont.Size = new System.Drawing.Size(75, 20);
             this.idCont.TabIndex = 8;
-            // 
-            // mennyisegCont
-            // 
-            this.mennyisegCont.Location = new System.Drawing.Point(115, 130);
-            this.mennyisegCont.Name = "mennyisegCont";
-            this.mennyisegCont.Size = new System.Drawing.Size(100, 20);
-            this.mennyisegCont.TabIndex = 6;
             // 
             // nameCont
             // 
@@ -188,6 +177,32 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "id:";
             // 
+            // egysegarCont
+            // 
+            this.egysegarCont.DecimalPlaces = 2;
+            this.egysegarCont.Location = new System.Drawing.Point(115, 92);
+            this.egysegarCont.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.egysegarCont.Name = "egysegarCont";
+            this.egysegarCont.Size = new System.Drawing.Size(75, 20);
+            this.egysegarCont.TabIndex = 12;
+            // 
+            // mennyisegCont
+            // 
+            this.mennyisegCont.DecimalPlaces = 2;
+            this.mennyisegCont.Location = new System.Drawing.Point(115, 130);
+            this.mennyisegCont.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.mennyisegCont.Name = "mennyisegCont";
+            this.mennyisegCont.Size = new System.Drawing.Size(75, 20);
+            this.mennyisegCont.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +217,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.idCont)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.egysegarCont)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mennyisegCont)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,9 +235,9 @@
         private System.Windows.Forms.Button Modify;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.NumericUpDown idCont;
-        private System.Windows.Forms.TextBox mennyisegCont;
         private System.Windows.Forms.TextBox nameCont;
-        private System.Windows.Forms.TextBox egysegarCont;
+        private System.Windows.Forms.NumericUpDown mennyisegCont;
+        private System.Windows.Forms.NumericUpDown egysegarCont;
     }
 }
 

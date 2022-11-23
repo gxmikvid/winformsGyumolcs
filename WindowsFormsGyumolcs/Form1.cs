@@ -16,7 +16,7 @@ namespace WindowsFormsGyumolcs
     {
     public partial class Form1 : Form
     {
-        MySqlConnection conn = new MySqlConnection("server=localhost;user=root;database=autok;port=3306;password=");
+        MySqlConnection conn = new MySqlConnection("server=localhost;user=root;database=gyumolcsok;port=3306;password=");
         #region db_stuff
         public void DBHandler(MySqlConnection connection, string command, Action<MySqlCommand> Method)
         {
@@ -39,7 +39,7 @@ namespace WindowsFormsGyumolcs
             gyumolcsList.Items.Clear();
             while (dr.Read())
             {
-                Gyumolcs gyumolcs = new Gyumolcs(dr.GetInt32("id"), dr.GetString("nev"), dr.GetString("egysegar"), dr.GetString("mennyiseg"));
+                Gyumolcs gyumolcs = new Gyumolcs(dr.GetInt32("id"), dr.GetString("nev"), dr.GetDouble("egysegar"), dr.GetDouble("mennyiseg"));
                 gyumolcsList.Items.Add(gyumolcs);
             }
         }
@@ -86,30 +86,30 @@ namespace WindowsFormsGyumolcs
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DBHandler(conn, "SELECT * FROM autok", UpdateList);
+            DBHandler(conn, "SELECT * FROM gyumolcsok", UpdateList);
         }
 
         private void Add_Click(object sender, EventArgs e)
         {
-            DBHandler(conn, "INSERT INTO autok (id, nev, egysegar, mennyiseg) VALUES (NULL, @nev, @egysegar, @mennyiseg)", SQLUpload);
-            DBHandler(conn, "SELECT * FROM autok", UpdateList);
+            DBHandler(conn, "INSERT INTO gyumolcsok (id, nev, egysegar, mennyiseg) VALUES (NULL, @nev, @egysegar, @mennyiseg)", SQLUpload);
+            DBHandler(conn, "SELECT * FROM gyumolcsok", UpdateList);
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            DBHandler(conn, "DELETE FROM autok WHERE id = @id", SQLDelete);
-            DBHandler(conn, "SELECT * FROM autok", UpdateList);
+            DBHandler(conn, "DELETE FROM gyumolcsok WHERE id = @id", SQLDelete);
+            DBHandler(conn, "SELECT * FROM gyumolcsok", UpdateList);
         }
 
-        private void allAutok_SelectedIndexChanged(object sender, EventArgs e)
+        private void gyumolcsList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DBHandler(conn, "SELECT * FROM autok WHERE nev = @nev", Fill);
+            DBHandler(conn, "SELECT * FROM gyumolcsok WHERE nev = @nev", Fill);
         }
 
         private void Modify_Click(object sender, EventArgs e)
         {
-            DBHandler(conn, "UPDATE autok SET nev = @nev, egysegar = @egysegar, mennyiseg = @mennyiseg WHERE autok.id = @id", SQLModify);
-            DBHandler(conn, "SELECT * FROM autok", UpdateList);
+            DBHandler(conn, "UPDATE gyumolcsok SET nev = @nev, egysegar = @egysegar, mennyiseg = @mennyiseg WHERE gyumolcsok.id = @id", SQLModify);
+            DBHandler(conn, "SELECT * FROM gyumolcsok", UpdateList);
         }
     }
 }
