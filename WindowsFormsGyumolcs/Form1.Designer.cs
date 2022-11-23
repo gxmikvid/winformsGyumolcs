@@ -26,9 +26,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gyumolcsList = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.egysegarCont = new System.Windows.Forms.TextBox();
             this.Delete = new System.Windows.Forms.Button();
             this.Modify = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
@@ -39,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.egysegarCont = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.idCont)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +77,14 @@
             this.groupBox1.Size = new System.Drawing.Size(233, 291);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kiválasztott autó adatai";
+            this.groupBox1.Text = "Gyümölcs";
+            // 
+            // egysegarCont
+            // 
+            this.egysegarCont.Location = new System.Drawing.Point(115, 92);
+            this.egysegarCont.Name = "egysegarCont";
+            this.egysegarCont.Size = new System.Drawing.Size(100, 20);
+            this.egysegarCont.TabIndex = 12;
             // 
             // Delete
             // 
@@ -181,13 +187,6 @@
             this.label1.Size = new System.Drawing.Size(30, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "id:";
-            // 
-            // egysegarCont
-            // 
-            this.egysegarCont.Location = new System.Drawing.Point(115, 92);
-            this.egysegarCont.Name = "egysegarCont";
-            this.egysegarCont.Size = new System.Drawing.Size(100, 20);
-            this.egysegarCont.TabIndex = 12;
             // 
             // Form1
             // 
